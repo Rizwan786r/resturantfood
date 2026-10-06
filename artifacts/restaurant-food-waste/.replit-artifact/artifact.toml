@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Restaurant Food Waste Dashboard"
+description = "A responsive restaurant operations dashboard for logging food waste, tracking cost and volume, finding the biggest causes, and acting on data-driven recommendations. Records persist in the browser with localStorage."
+version = "1.0.0"
+id = "artifacts/restaurant-food-waste"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25502
+
+[services.development]
+run = "pnpm --filter @workspace/restaurant-food-waste run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/restaurant-food-waste", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/restaurant-food-waste/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25502"
+BASE_PATH = "/"
