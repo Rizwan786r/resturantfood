@@ -1,0 +1,840 @@
+============================================================
+POST-MVP IMPLEMENTATION & POLISH SPECIFICATION
+============================================================
+
+The core Restaurant Food Waste Dashboard workflow has already
+been implemented:
+
+ADD WASTE
+→ SAVE DATA
+→ UPDATE DASHBOARD
+→ UPDATE CHARTS
+→ UPDATE ANALYTICS
+→ IDENTIFY MAJOR WASTE SOURCE
+→ CALCULATE FINANCIAL IMPACT
+→ GENERATE RECOMMENDATIONS
+
+Do NOT rebuild the existing workflow.
+
+Now implement the following additional features and improvements
+on top of the existing working application.
+
+============================================================
+1. COMPLETE CRUD IMPROVEMENT
+============================================================
+
+Make sure every waste record supports:
+
+- Create
+- Read
+- Update
+- Delete
+
+Add a polished Edit interface.
+
+When editing a record, automatically refresh all affected:
+
+- Dashboard statistics
+- Charts
+- Analytics
+- Recommendations
+- Waste score
+
+When deleting a record, ask for confirmation before deletion.
+
+============================================================
+2. ADVANCED SEARCH AND FILTERING
+============================================================
+
+Improve the Waste Records page.
+
+Add:
+
+- Search by food name
+- Filter by category
+- Filter by waste reason
+- Filter by unit
+- Filter by date range
+- Filter by minimum/maximum cost
+
+Allow multiple filters to work together.
+
+Add:
+
+Clear Filters
+
+button.
+
+Display the number of matching records.
+
+Example:
+
+"Showing 12 of 86 records"
+
+============================================================
+3. ADVANCED SORTING
+============================================================
+
+Allow sorting by:
+
+- Newest
+- Oldest
+- Highest quantity
+- Lowest quantity
+- Highest cost
+- Lowest cost
+- Food name A-Z
+- Food name Z-A
+
+Sorting must work together with filters.
+
+============================================================
+4. DATE RANGE ANALYTICS
+============================================================
+
+Add a global analytics period selector.
+
+Options:
+
+- Today
+- Yesterday
+- Last 7 Days
+- Last 30 Days
+- This Month
+- Last Month
+- Last 3 Months
+- This Year
+- All Time
+- Custom Range
+
+When the selected period changes, dynamically update:
+
+- Total waste
+- Total cost
+- Waste events
+- Major waste source
+- Top category
+- Most wasted food
+- Charts
+- Recommendations
+- Waste score
+
+============================================================
+5. ADVANCED ANALYTICS
+============================================================
+
+Improve the Analytics page.
+
+Add:
+
+A. Waste by source
+
+B. Waste by category
+
+C. Waste by food item
+
+D. Waste cost by category
+
+E. Waste trend
+
+F. Number of waste events over time
+
+G. Average waste per event
+
+H. Average cost per waste event
+
+I. Highest-cost waste item
+
+J. Most frequently wasted item
+
+All values must be calculated dynamically.
+
+Do not hard-code analytics.
+
+============================================================
+6. INSIGHTS SECTION
+============================================================
+
+Create an automatic Insights section.
+
+Generate useful statements from actual data.
+
+Examples:
+
+"Overproduction accounts for 42% of total waste."
+
+"Chicken Biryani is the most wasted food item."
+
+"Prepared Food is the highest-waste category."
+
+"Food waste increased by 14% compared with the previous period."
+
+"₹18,450 of food value has been wasted."
+
+"Average waste per event is 2.8 kg."
+
+Only display insights when enough data exists.
+
+Do not invent information.
+
+============================================================
+7. WASTE MANAGEMENT SCORE
+============================================================
+
+Improve the Waste Management Score.
+
+Display:
+
+Score:
+78 / 100
+
+Status:
+Good
+
+Also show why the score was given.
+
+Example:
+
+Positive factors:
+- Waste decreasing
+- Low spoilage
+- Lower waste cost
+
+Negative factors:
+- High overproduction
+- High prepared-food waste
+
+Use transparent rule-based calculations.
+
+Do not use AI or machine learning.
+
+============================================================
+8. RECOMMENDATION SYSTEM IMPROVEMENT
+============================================================
+
+Improve the existing rule-based recommendation system.
+
+Recommendations should have:
+
+- Priority
+- Problem
+- Evidence
+- Suggested Action
+- Expected Benefit
+
+Example:
+
+HIGH PRIORITY
+
+Problem:
+Overproduction
+
+Evidence:
+42% of total waste comes from overproduction.
+
+Suggested Action:
+Reduce preparation quantities during low-demand periods.
+
+Expected Benefit:
+Potential reduction in food waste and preparation costs.
+
+Generate multiple recommendations if multiple problems exist.
+
+Sort recommendations by priority.
+
+============================================================
+9. TREND DETECTION
+============================================================
+
+Detect whether waste is:
+
+- Increasing
+- Decreasing
+- Stable
+
+Compare the current selected period with the previous equivalent period.
+
+Example:
+
+Current 7 days:
+52 kg
+
+Previous 7 days:
+68 kg
+
+Result:
+
+"Food waste decreased by 23.5%."
+
+If there is insufficient historical data, clearly state:
+
+"Not enough historical data to determine a trend."
+
+============================================================
+10. TOP WASTE ITEMS
+============================================================
+
+Create a Top Waste Items section.
+
+Display something like:
+
+1. Chicken Biryani — 18 kg
+2. Rice — 14 kg
+3. Paneer Curry — 11 kg
+4. Vegetables — 9 kg
+5. Chapati — 7 kg
+
+Allow the user to change:
+
+Top 5
+Top 10
+
+The ranking must be calculated dynamically.
+
+============================================================
+11. TOP WASTE SOURCES
+============================================================
+
+Create a ranked list:
+
+1. Overproduction — 42%
+2. Spoilage — 27%
+3. Customer Leftovers — 18%
+4. Preparation Waste — 13%
+
+Use actual database data.
+
+============================================================
+12. FINANCIAL ANALYSIS
+============================================================
+
+Add a financial impact section.
+
+Display:
+
+Total Estimated Loss
+
+Average Loss per Waste Event
+
+Highest Cost Category
+
+Highest Cost Food
+
+Cost by Waste Reason
+
+Cost Trend
+
+Example:
+
+Total Loss:
+₹18,450
+
+Average Loss/Event:
+₹212
+
+Highest Cost Source:
+Overproduction
+
+============================================================
+13. CSV EXPORT
+============================================================
+
+Add:
+
+Export CSV
+
+button.
+
+Export the currently filtered records.
+
+CSV columns:
+
+Date
+Food Name
+Category
+Quantity
+Unit
+Reason
+Estimated Cost
+Notes
+
+The exported file should contain only the records currently selected by filters.
+
+============================================================
+14. PRINTABLE REPORT
+============================================================
+
+Add:
+
+Print Report
+
+button.
+
+Create a professional print-friendly report containing:
+
+Restaurant Food Waste Report
+
+Selected Date Range
+
+Total Waste
+
+Estimated Financial Loss
+
+Waste Events
+
+Major Waste Source
+
+Top Waste Category
+
+Most Wasted Food
+
+Waste Source Breakdown
+
+Waste Category Breakdown
+
+Trend Summary
+
+Recommendations
+
+The report should be suitable for showing to a restaurant manager.
+
+============================================================
+15. DASHBOARD CUSTOMIZATION
+============================================================
+
+Improve the dashboard layout.
+
+Organize it into:
+
+SECTION 1:
+Overview cards
+
+SECTION 2:
+Waste trend
+
+SECTION 3:
+Waste source analysis
+
+SECTION 4:
+Category analysis
+
+SECTION 5:
+Top waste items
+
+SECTION 6:
+Financial impact
+
+SECTION 7:
+Recommendations
+
+SECTION 8:
+Waste management score
+
+Avoid overcrowding.
+
+============================================================
+16. QUICK ACTIONS
+============================================================
+
+Add quick-action buttons to the dashboard:
+
++ Add Waste
+
+View Records
+
+View Analytics
+
+View Recommendations
+
+Export Report
+
+Make the most important action:
+
++ Add Waste
+
+visually prominent.
+
+============================================================
+17. RECENT WASTE ACTIVITY
+============================================================
+
+Add a Recent Waste section.
+
+Show the latest 5-10 records.
+
+Example:
+
+Today
+Chicken Biryani
+2 kg
+Overproduction
+₹300
+
+Today
+Tomatoes
+1 kg
+Spoilage
+₹80
+
+Add:
+
+View All Records
+
+button.
+
+============================================================
+18. NOTIFICATIONS / ALERTS
+============================================================
+
+Create a lightweight alert system based on data.
+
+Examples:
+
+HIGH WASTE ALERT
+
+Overproduction has exceeded 40% of total waste.
+
+SPOILAGE ALERT
+
+Spoilage has increased compared with the previous period.
+
+POSITIVE ALERT
+
+Food waste has decreased by 18% this month.
+
+These alerts must be generated from actual data.
+
+============================================================
+19. EMPTY AND LOW-DATA STATES
+============================================================
+
+Handle situations where there is:
+
+- No data
+- Only one record
+- Insufficient historical data
+- No records in selected date range
+
+Never display misleading charts or statistics.
+
+Example:
+
+"No data available for the selected period."
+
+============================================================
+20. LOADING STATES
+============================================================
+
+Add loading indicators for:
+
+- Dashboard
+- Analytics
+- Waste Records
+- Recommendations
+
+Prevent users from accidentally submitting the same form multiple times.
+
+============================================================
+21. ERROR HANDLING
+============================================================
+
+Improve error handling.
+
+Handle:
+
+- Database failure
+- API failure
+- Invalid input
+- Network error
+- Empty results
+- Failed export
+- Failed delete
+- Failed update
+
+Use friendly messages.
+
+Never expose raw technical errors to the user.
+
+============================================================
+22. RESPONSIVE DESIGN
+============================================================
+
+Make the complete application responsive.
+
+Test:
+
+Desktop
+Laptop
+Tablet
+Mobile
+
+On mobile:
+
+- Sidebar should collapse
+- Cards should stack
+- Charts should resize
+- Tables should scroll horizontally
+- Forms should become one-column
+- Buttons should remain easy to tap
+
+============================================================
+23. UI POLISH
+============================================================
+
+Improve the visual quality.
+
+Use:
+
+- Consistent spacing
+- Consistent border radius
+- Consistent typography
+- Clear visual hierarchy
+- Professional icons
+- Subtle transitions
+- Hover states
+- Focus states
+- Success states
+- Warning states
+- Error states
+
+Avoid excessive animations.
+
+The interface should look like a real commercial restaurant management product.
+
+============================================================
+24. ACCESSIBILITY
+============================================================
+
+Improve accessibility.
+
+Ensure:
+
+- Form labels are present
+- Buttons have meaningful names
+- Keyboard navigation works
+- Inputs have visible focus states
+- Text has sufficient contrast
+- Error messages are understandable
+
+============================================================
+25. DATABASE AND DATA INTEGRITY
+============================================================
+
+Make sure:
+
+- Duplicate records are not accidentally created from double-clicking submit.
+- Invalid values cannot enter the database.
+- Deleting a record removes it correctly.
+- Editing a record updates the correct record.
+- Database values remain after browser refresh.
+- Dashboard values always reflect the current database state.
+
+Do not permanently store calculated totals if they can be calculated from raw records.
+
+============================================================
+26. API IMPROVEMENTS
+============================================================
+
+Ensure API endpoints return proper HTTP status codes.
+
+Examples:
+
+200:
+Successful request
+
+201:
+Successfully created
+
+400:
+Invalid request
+
+404:
+Record not found
+
+500:
+Server error
+
+Return clear JSON responses.
+
+============================================================
+27. SECURITY IMPROVEMENTS
+============================================================
+
+Ensure:
+
+- Database credentials are stored securely.
+- Secrets are not exposed in frontend code.
+- Backend validates all incoming data.
+- SQL queries are safely parameterized.
+- User input is sanitized appropriately.
+
+============================================================
+28. PERFORMANCE IMPROVEMENTS
+============================================================
+
+Optimize the application after functionality is complete.
+
+Avoid:
+
+- Unnecessary API requests
+- Unnecessary database queries
+- Duplicate calculations
+- Unnecessary React re-renders
+
+Use efficient queries for analytics.
+
+============================================================
+29. DEMO DATA MANAGEMENT
+============================================================
+
+Demo data should only be inserted when the database is empty.
+
+Do not insert duplicate demo records every time the server restarts.
+
+Provide realistic data covering:
+
+- Different dates
+- Different categories
+- Different reasons
+- Different food items
+- Different costs
+
+This allows charts and comparisons to work during the hackathon demo.
+
+============================================================
+30. DEMO SCENARIO
+============================================================
+
+Make sure the following demonstration works perfectly:
+
+1. Open Dashboard.
+
+2. Show current waste.
+
+3. Show financial loss.
+
+4. Show major waste source.
+
+5. Open Analytics.
+
+6. Show top wasted food.
+
+7. Show waste trend.
+
+8. Show recommendation.
+
+9. Add a new waste record.
+
+10. Save it.
+
+11. Return to Dashboard.
+
+12. Show that statistics changed.
+
+13. Show that the chart changed.
+
+14. Show that analytics changed.
+
+15. Show that recommendations changed if applicable.
+
+16. Open Waste Records.
+
+17. Search for the newly added food.
+
+18. Edit the record.
+
+19. Show updated statistics.
+
+20. Delete the record.
+
+21. Show statistics returning to the previous state.
+
+============================================================
+31. FINAL QUALITY CHECK
+============================================================
+
+Before considering the project finished:
+
+Test every button.
+
+Test every form.
+
+Test every API.
+
+Test every database operation.
+
+Test every chart.
+
+Test every filter.
+
+Test every calculation.
+
+Test every recommendation.
+
+Test browser refresh.
+
+Test mobile layout.
+
+Test empty states.
+
+Test invalid inputs.
+
+Check browser console.
+
+Check server console.
+
+Fix all errors.
+
+Do not leave placeholder buttons.
+
+Do not leave dummy functionality.
+
+Do not leave broken links.
+
+Do not leave hard-coded analytics.
+
+============================================================
+32. HACKATHON PRESENTATION POLISH
+============================================================
+
+The final interface should immediately communicate:
+
+HOW MUCH?
+→ Total Waste
+
+HOW MUCH MONEY?
+→ Financial Loss
+
+WHY?
+→ Major Waste Source
+
+WHAT FOOD?
+→ Most Wasted Food
+
+WHAT SHOULD WE DO?
+→ Recommendations
+
+ARE WE IMPROVING?
+→ Waste Trend / Score
+
+The evaluator should understand the product within a few seconds.
+
+============================================================
+33. FINAL PRODUCT STANDARD
+============================================================
+
+The application should NOT feel like:
+
+- A static college project
+- A collection of disconnected pages
+- A UI-only prototype
+- A collection of hard-coded charts
+
+It should feel like:
+
+A functional restaurant waste management product where
+every feature is connected to the underlying data.
+
+============================================================
+END OF POST-MVP IMPLEMENTATION
+============================================================

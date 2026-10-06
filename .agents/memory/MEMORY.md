@@ -1,0 +1,1 @@
+- [Browser-local storage](restaurant-waste-storage.md) — keep waste records in localStorage; do not add shared/server persistence without explicit request.
